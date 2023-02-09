@@ -218,13 +218,6 @@ const App = () => {
           />
         </View>
       )}
-      {/* <ModalInfoAdjust
-        visible={modalInfoAdjust}
-        handleModalVisibility={closeAdjustsModal}
-        setLote={setLote}
-        loteAdjust={loteAdjust}
-        lote={lote}
-      /> */}
       {OCRLoading && (
         <ActivityIndicator
           size="large"
