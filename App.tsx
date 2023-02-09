@@ -131,21 +131,6 @@ const App = () => {
               loteEnd = FPosition;
               console.log('entrou no if do F');
             }
-            // else {
-            //   multiBlocks = true;
-            //   setLote(blocks[i]?.slice(1));
-            //   console.log('entrou do else do if do F');
-            // }
-            if (blocks[i]?.includes('F ')) {
-              let FPosition = blocks[i].indexOf('F ');
-              loteEnd = FPosition;
-              console.log('entrou no if do F espaço');
-            }
-            if (blocks[i]?.includes('F.')) {
-              let FPosition = blocks[i].indexOf('F.');
-              loteEnd = FPosition;
-              console.log('entrou no if do F.');
-            }
             if (!multiBlocks) {
               let FPosition = blocks[i].indexOf('F');
               loteEnd = FPosition;
