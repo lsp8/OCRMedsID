@@ -196,7 +196,7 @@ const App = () => {
   //TESTELOTE11 = PARCIALMENTE TESTADO. BLOCOS ESTRANHOS. REVISAR <<<<<<<<<<<<<
   //TESTELOTE12 = OK SEM ALTERAÇÕES DE CODIGO - Entrou no if do !multiblocks FPosition -1
   //TESTELOTE13 = OK SEM ALTERAÇÕES DE CODIGO - Entrou no if do !multiblocks FPosition -1 && Entrou no terceiro cenário
-  //TESTELOTE14 =
+  //TESTELOTE14 = OK, ALTERAÇÃO DE CÓDIGO(ANTERIORES VALIDADOS), - Entrou no cneário 0
   //TESTELOTE15 = OK SEM ALTERAÇÕES DE CODIGO - Entrou no primeiro cenário && entrou no F: do primeiro cenário
   //TESTELOTE16 = OK SEM ALTERAÇÕES DE CODIGO - Entrou no F: do primeiro cenário
   //TESTELOTE17 = OK SEM ALTERAÇÕES DE CODIGO - Entrou no if do !multiblocks FPosition -1 && Entrou no terceiro cenário
