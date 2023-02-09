@@ -52,29 +52,6 @@ const App = () => {
     setLote('');
   };
 
-  // const handleAdjustLote = () => {
-  //   setModalInfoAdjust(true);
-  //   setLoteAdjust(true);
-  // };
-
-  // const closeAdjustsModal = () => {
-  //   setModalInfoAdjust(false);
-  //   setLoteAdjust(false);
-  // };
-
-  // TRATAMENTO CPF
-  // useEffect(() => {
-  //   for (let i = 0; i <= blocks.length; i++) {
-  //     if (
-  //       blocks[i]?.includes('.') &&
-  //       blocks[i]?.includes('-') &&
-  //       blocks[i].length >= 13
-  //     ) {
-  //       setCPF(blocks[i]);
-  //       console.log('índice do bloco cpf= ', i);
-  //     }
-  //   }
-  // }, [blocks]);
   useEffect(() => {
     const fullReading = blocks.join();
     let includesL = false;
