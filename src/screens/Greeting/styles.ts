@@ -24,12 +24,13 @@ export const HeaderText = styled(Text)`
 `;
 
 export const Intro = styled(Text)`
-  font-size: 20px;
+  font-size: 25px;
   color: #ffffff;
   margin-top: 10%;
   margin-left: 5%;
   margin-right: 5%;
   text-align: center;
+  font-weight: bold;
 `;
 
 export const Button = styled(TouchableOpacity)`

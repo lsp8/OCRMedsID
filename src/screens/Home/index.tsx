@@ -1,11 +1,21 @@
 import React, {useEffect, useState} from 'react';
+import {StyleSheet, TouchableOpacity, ActivityIndicator} from 'react-native';
+
 import {
-  StyleSheet,
-  TouchableOpacity,
-  ActivityIndicator,
-  TextInput,
-} from 'react-native';
-import {SafeAreaView, Text, View, FlatList} from 'react-native';
+  Container,
+  InnerContainer,
+  DataContainer,
+  LoteView,
+  Data,
+  CamButton,
+  Clear,
+  Header,
+  Label,
+  BlockCard,
+  ModalBlocks,
+  Loading,
+} from './styles';
+import {Text, View, FlatList} from 'react-native';
 import TextRecognition from 'react-native-text-recognition';
 import ImageCropPicker from 'react-native-image-crop-picker';
 
@@ -38,14 +48,14 @@ export default function HomeScreen() {
   };
 
   const renderBloco = (block: string) => (
-    <View style={styles.blockCard}>
+    <BlockCard>
       <Text
         onPress={() => {
           setModalBlocksVis(false);
         }}>
         {block}
       </Text>
-    </View>
+    </BlockCard>
   );
 
   const wipeData = () => {
@@ -165,39 +175,36 @@ export default function HomeScreen() {
   //TESTELOTE18 = OK SEM ALTERAÇÕES DE CODIGO - Entrou no terceiro cenário
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.innerContainer}>
-        <TouchableOpacity
-          style={styles.camButton}
-          onPress={takePhotoFromCamera}>
-          <Text style={styles.header}>Abrir Câmera</Text>
-        </TouchableOpacity>
-        <View style={styles.loteView}>
+    <Container>
+      <InnerContainer>
+        <CamButton onPress={takePhotoFromCamera}>
+          <Header>Abrir Câmera</Header>
+        </CamButton>
+        <LoteView>
           {lote.length > 1 && (
             <View>
-              <Text style={styles.header}>Lote:</Text>
+              <Header>Lote:</Header>
               <View style={styles.dataContainer}>
-                <TextInput
-                  style={styles.data}
+                <Data
                   value={lote}
                   multiline={true}
                   onChangeText={(text: React.SetStateAction<string>) => {
                     setLote(text);
                   }}
-                  blurOnSubmit={true}></TextInput>
+                  blurOnSubmit={true}></Data>
               </View>
               <TouchableOpacity
                 onPress={() => {
                   wipeData();
                 }}>
-                <Text style={styles.clear}>Limpar</Text>
+                <Clear>Limpar</Clear>
               </TouchableOpacity>
             </View>
           )}
-        </View>
-      </View>
+        </LoteView>
+      </InnerContainer>
       {modalBlocksVis && (
-        <View style={styles.modalBlocks}>
+        <ModalBlocks>
           <View style={{marginRight: '5%', alignItems: 'flex-end'}}>
             <Text
               style={{fontSize: 20}}
@@ -207,8 +214,8 @@ export default function HomeScreen() {
               X
             </Text>
           </View>
-          <Text style={styles.label}> Número de blocos= {blocksAmount}</Text>
-          <Text style={styles.label}>Selecione o campo que contém o lote:</Text>
+          <Label> Número de blocos= {blocksAmount}</Label>
+          <Label>Selecione o campo que contém o lote:</Label>
 
           <FlatList
             renderItem={({item}) => renderBloco(item)}
@@ -216,83 +223,19 @@ export default function HomeScreen() {
             keyExtractor={item => item}
             showsVerticalScrollIndicator={true}
           />
-        </View>
+        </ModalBlocks>
       )}
-      {OCRLoading && (
-        <ActivityIndicator
-          size="large"
-          color="#36c0f7"
-          style={styles.activityIndicator}></ActivityIndicator>
-      )}
-    </SafeAreaView>
+      {OCRLoading && <Loading size="large" color="#36c0f7"></Loading>}
+    </Container>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#a4e6bb',
-    flex: 1,
-    padding: 10,
-  },
-  innerContainer: {
-    justifyContent: 'space-evenly',
-    flex: 1,
-  },
   dataContainer: {
     backgroundColor: '#fff',
     justifyContent: 'center',
     borderColor: 'white',
     borderWidth: 1,
     elevation: 5,
-  },
-  data: {
-    color: '#000',
-    fontSize: 50,
-    alignSelf: 'center',
-  },
-  clear: {
-    color: '#8d8c8c',
-    fontSize: 20,
-    alignSelf: 'center',
-  },
-  camButton: {
-    borderRadius: 15,
-    backgroundColor: '#ffffff',
-    width: '60%',
-    height: '10%',
-    alignSelf: 'center',
-    justifyContent: 'center',
-  },
-  label: {fontSize: 20, fontWeight: 'bold'},
-  header: {
-    fontSize: 20,
-    alignSelf: 'center',
-    fontWeight: 'bold',
-    color: '#8d8c8c',
-  },
-  blockCard: {
-    padding: 15,
-    elevation: 1,
-    borderBottomWidth: 1,
-  },
-  modalBlocks: {
-    elevation: 1,
-    backgroundColor: 'white',
-    position: 'absolute',
-    alignSelf: 'center',
-    top: 20,
-    padding: 5,
-    width: '95%',
-    display: 'flex',
-    height: '90%',
-  },
-  activityIndicator: {
-    position: 'absolute',
-    marginTop: '70%',
-    zIndex: 1,
-    alignSelf: 'center',
-  },
-  loteView: {
-    justifyContent: 'space-around',
   },
 });
