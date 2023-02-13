@@ -184,7 +184,7 @@ export default function HomeScreen() {
           {lote.length > 1 && (
             <View>
               <Header>Lote:</Header>
-              <DataContainer>
+              <DataContainer style={styles.dataContainer}>
                 <Data
                   value={lote}
                   multiline={true}
@@ -229,3 +229,9 @@ export default function HomeScreen() {
     </Container>
   );
 }
+
+const styles = StyleSheet.create({
+  dataContainer: {
+    elevation: 5,
+  },
+});
