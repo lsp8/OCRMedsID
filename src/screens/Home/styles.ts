@@ -18,13 +18,13 @@ export const InnerContainer = styled(View)`
   justify-content: space-evenly;
   flex: 1;
 `;
-//bugado aqui v
+
 export const DataContainer = styled(View)`
   justify-content: center;
-  flex: 1;
   background-color: #fff;
   border-color: white;
   border-width: 1px;
+  z-index: 5;
 `;
 
 export const LoteView = styled(View)`

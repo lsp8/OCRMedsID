@@ -184,7 +184,7 @@ export default function HomeScreen() {
           {lote.length > 1 && (
             <View>
               <Header>Lote:</Header>
-              <View style={styles.dataContainer}>
+              <DataContainer>
                 <Data
                   value={lote}
                   multiline={true}
@@ -192,7 +192,7 @@ export default function HomeScreen() {
                     setLote(text);
                   }}
                   blurOnSubmit={true}></Data>
-              </View>
+              </DataContainer>
               <TouchableOpacity
                 onPress={() => {
                   wipeData();
@@ -229,13 +229,3 @@ export default function HomeScreen() {
     </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  dataContainer: {
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    borderColor: 'white',
-    borderWidth: 1,
-    elevation: 5,
-  },
-});
