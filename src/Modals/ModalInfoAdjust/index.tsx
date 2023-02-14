@@ -1,12 +1,14 @@
 import React from 'react';
+import {Modal, View, Text, StyleSheet} from 'react-native';
+
 import {
-  Modal,
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-  StyleSheet,
-} from 'react-native';
+  AdjustButton,
+  AdjustButtonText,
+  AdjustInput,
+  Container,
+  InfoAdjHeader,
+  InnerContainer,
+} from './styles';
 
 interface ModalProps {
   visible: boolean;
@@ -35,13 +37,8 @@ export function ModalInfoAdjust({
       visible={visible}
       transparent
       onRequestClose={handleCloseModal}>
-      <View style={styles.infoAdjustContainer}>
-        <View
-          style={{
-            marginRight: '4%',
-            alignItems: 'flex-end',
-            marginTop: '2%',
-          }}>
+      <Container>
+        <InnerContainer>
           <Text
             style={{fontSize: 20, color: '#09035c'}}
             onPress={() => {
@@ -49,76 +46,26 @@ export function ModalInfoAdjust({
             }}>
             X
           </Text>
-        </View>
-        <Text style={styles.infoAdjHeader}>
-          {' '}
-          Ajuste o lote conforme a embalagem :
-        </Text>
+        </InnerContainer>
+        <InfoAdjHeader> Ajuste o lote conforme a embalagem :</InfoAdjHeader>
 
         {loteAdjust && (
-          <TextInput
-            style={styles.adjustInput}
+          <AdjustInput
             value={lote}
             onChangeText={(text: React.SetStateAction<string>) => {
               setLote(text);
-            }}></TextInput>
+            }}></AdjustInput>
         )}
 
         <View>
-          <TouchableOpacity
-            style={styles.adjustButton}
+          <AdjustButton
             onPress={() => {
               handleConfirmation();
             }}>
-            <Text style={styles.adjustButtonText}>Confirmar</Text>
-          </TouchableOpacity>
+            <AdjustButtonText>Confirmar</AdjustButtonText>
+          </AdjustButton>
         </View>
-      </View>
+      </Container>
     </Modal>
   );
 }
-
-const styles = StyleSheet.create({
-  infoAdjustContainer: {
-    backgroundColor: 'white',
-    position: 'absolute',
-    alignSelf: 'center',
-    top: 50,
-
-    width: '80%',
-    borderRadius: 10,
-  },
-  infoAdjHeader: {
-    position: 'absolute',
-    marginTop: '8%',
-    fontSize: 16,
-    marginHorizontal: '4%',
-    color: '#09035c',
-    marginBottom: '4%',
-  },
-  adjustInput: {
-    marginTop: '8%',
-    marginBottom: '4%',
-    fontSize: 18,
-    color: '#09035c',
-    alignSelf: 'center',
-    backgroundColor: '#aeaeb1',
-    paddingHorizontal: '5%',
-    borderWidth: 1,
-    borderColor: '#09035c',
-    borderStyle: 'dashed',
-  },
-  adjustButton: {
-    alignSelf: 'center',
-    borderWidth: 1,
-    borderColor: '#09035c',
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    marginBottom: '2%',
-  },
-  adjustButtonText: {
-    fontSize: 16,
-    color: '#09035c',
-  },
-});
