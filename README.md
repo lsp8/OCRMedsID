@@ -4,7 +4,9 @@
 ###### Role até o final para conferir diversos exemplos!
 
 ###### Telas iniciais:
-![fotoapplotes1](https://user-images.githubusercontent.com/83622741/218754564-1c6b45ba-ddf3-4ed3-ac48-1984b1a1d98f.png) ![fotoapplotes2](https://user-images.githubusercontent.com/83622741/218755340-709d09a3-6974-42c2-9f8d-c82a001305a1.png) 
+
+![fotogreetapplote2](https://user-images.githubusercontent.com/83622741/218795136-f1fecce1-7001-4293-8cd3-78bd11f7ef02.png)
+![fotoapplotes2](https://user-images.githubusercontent.com/83622741/218755340-709d09a3-6974-42c2-9f8d-c82a001305a1.png) 
 
 ###### Câmera:
 ![fotoapplotes3](https://user-images.githubusercontent.com/83622741/218755503-49e3d1cc-6937-4976-8bf1-56c07365195c.png) 
