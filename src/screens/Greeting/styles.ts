@@ -25,7 +25,7 @@ export const HeaderText = styled(Text)`
 
 export const Intro = styled(Text)`
   font-size: 25px;
-  color: #ffffff;
+  color: #8d8c8c;
   margin-top: 10%;
   margin-left: 5%;
   margin-right: 5%;

@@ -1,25 +1,17 @@
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  SafeAreaView,
-  TextInput,
-  ActivityIndicator,
-} from 'react-native';
 import styled from 'styled-components/native';
 
-export const Container = styled(SafeAreaView)`
+export const Container = styled.SafeAreaView`
   background-color: #a4e6bb;
   flex: 1;
   padding: 10px;
 `;
 
-export const InnerContainer = styled(View)`
+export const InnerContainer = styled.View`
   justify-content: space-evenly;
   flex: 1;
 `;
 
-export const DataContainer = styled(View)`
+export const DataContainer = styled.View`
   justify-content: center;
   background-color: #fff;
   border-color: white;
@@ -27,17 +19,17 @@ export const DataContainer = styled(View)`
   z-index: 5;
 `;
 
-export const LoteView = styled(View)`
+export const LoteView = styled.View`
   justify-content: space-around;
 `;
 
-export const Data = styled(TextInput)`
+export const Data = styled.TextInput`
   color: '#000';
   font-size: 50px;
   align-self: center;
 `;
 
-export const CamButton = styled(TouchableOpacity)`
+export const CamButton = styled.TouchableOpacity`
   border-radius: 15px;
   background-color: #ffffff;
   width: 60%;
@@ -46,31 +38,31 @@ export const CamButton = styled(TouchableOpacity)`
   justify-content: center;
 `;
 
-export const Clear = styled(Text)`
+export const Clear = styled.Text`
   color: #8d8c8c;
   font-size: 20px;
   align-self: center;
 `;
 
-export const Header = styled(Text)`
+export const Header = styled.Text`
   font-size: 20px;
   align-self: center;
   font-weight: bold;
   color: '#8d8c8c';
 `;
 
-export const Label = styled(Text)`
+export const Label = styled.Text`
   font-size: 20px;
   font-weight: bold;
 `;
 
-export const BlockCard = styled(View)`
+export const BlockCard = styled.View`
   padding: 15px;
   border-bottom-width: 1px;
   z-index: 1;
 `;
 
-export const ModalBlocks = styled(View)`
+export const ModalBlocks = styled.View`
   z-index: 1;
   background-color: '#fff';
   position: absolute;
@@ -82,7 +74,7 @@ export const ModalBlocks = styled(View)`
   height: 90%;
 `;
 
-export const Loading = styled(ActivityIndicator)`
+export const Loading = styled.ActivityIndicator`
   position: absolute;
   margin-top: 70%;
   z-index: 1;

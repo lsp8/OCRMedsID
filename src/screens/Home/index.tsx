@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, TouchableOpacity, ActivityIndicator} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 
 import {
   Container,
@@ -62,7 +62,7 @@ export default function HomeScreen() {
     setLote('');
   };
 
-  useEffect(() => {
+  const findLote = () => {
     const fullReading = blocks.join();
     let includesL = false;
     let multiBlocks = false;
@@ -77,13 +77,12 @@ export default function HomeScreen() {
           isFullWord = true;
           let rawLote = blocks[i];
           let LOTEPosition = blocks[i].indexOf('LOTE') + 4;
-          setLote(rawLote.slice(LOTEPosition));
+          setLote(rawLote.slice(LOTEPosition).replace(/ /g, ''));
           if (blocks[i]?.includes('FAB')) {
             let FABPosition = blocks[i].indexOf('FAB');
             setLote(rawLote.slice(LOTEPosition, FABPosition).replace(/ /g, ''));
           }
         }
-
         if (!isFullWord) {
           //dois pontos
           if (blocks[i]?.includes('L:')) {
@@ -152,6 +151,10 @@ export default function HomeScreen() {
         }
       }
     }
+  };
+
+  useEffect(() => {
+    findLote();
   }, [blocks]);
 
   //OCR LOG:
